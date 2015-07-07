@@ -49,7 +49,7 @@ end
 #
 
 Then /^(?:I|they|"([^"]*?)") should receive (an|no|\d+) emails?$/ do |address, amount|
-  unread_emails_for(address).size.should == parse_email_count(amount)
+  expect(unread_emails_for(address).size).to eq (parse_email_count(amount))
 end
 
 Then /^(?:I|they|"([^"]*?)") should have (an|no|\d+) emails?$/ do |address, amount|
